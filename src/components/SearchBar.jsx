@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './SearchBar.css'
 
 function SearchBar({ onSubmit }) {
   const [term, setTerm] = useState('')
@@ -13,16 +14,14 @@ function SearchBar({ onSubmit }) {
   }
 
   return (
-    <div>
+    <div className='search-bar'>
       <form onSubmit={handleFormSubmit}>
+        <label>Enter Search Term</label>
         <input
           type='text'
           value={term}
           onChange={handleChange}
-          placeholder='Search unSplash!'
         />
-        {/* I ADDED THIS FEATURE */}
-        {term.length < 2 && <p>Term must be contain more than 2 characters.</p>}
       </form>
     </div>
   )

@@ -2,10 +2,9 @@
 // secret key = yRpxtl0pgzAhooPRy_8yXuGTyos2aNmFl5FNmvtaACY
 
 import axios from 'axios'
-const url = 'https://api.unsplash.com/search/photos'
 
 const searchImages = async (term) => {
-  const response = await axios.get(url, {
+  const response = await axios.get('https://api.unsplash.com/search/photos', {
     headers: {
       Authorization: 'Client-ID R4s8cBVQz-LMwACgmuw8YdsufdGPNifXeUz-cTxSHRk',
     },
@@ -13,6 +12,7 @@ const searchImages = async (term) => {
       query: term,
     },
   })
+
   return response.data.results
 }
 
